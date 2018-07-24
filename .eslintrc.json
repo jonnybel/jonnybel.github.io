@@ -1,0 +1,15 @@
+{
+    "root": true,
+    "extends": [
+        "eslint-config-moxy/es8",
+        "eslint-config-moxy/addons/browser",
+        "eslint-config-moxy/addons/es6-modules",
+        "eslint-config-moxy/addons/react",
+        "eslint-config-moxy/addons/object-spread"
+    ],
+    "rules": {
+        "react/jsx-no-bind": 0,
+        "react/no-multi-comp": 0,
+        "no-unused-expressions": 0
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "jonnybel.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "a playground",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonnybel/jonnybel.github.io.git"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "emotion": "^9.1.1",
+    "npm": "^5.8.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-emotion": "^9.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-moxy": "^5.2.1",
+    "react-scripts": "^1.1.1"
+  }
+}
