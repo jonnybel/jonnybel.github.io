@@ -26,6 +26,16 @@ const paintAnimation = keyframes`
         transform: scale(2);
     }
 `;
+
+const loadingLoop = keyframes`
+    from {
+        transform: scale(0.015);
+    }
+    to {
+        transform: scale(0.02);
+    }
+`;
+
 const paintEntrance = keyframes`
     from {
         transform: scale(0.01);
@@ -68,4 +78,14 @@ const captionOpening = keyframes`
     }
   `;
 
-export { avatarEntrance, paintEntrance, paintDuration, paintAnimation, avatarOpening, captionOpening, openingDuration, linksAnimation };
+export {
+    loadingLoop,
+    paintEntrance,
+    paintDuration,
+    paintAnimation,
+    avatarEntrance,
+    avatarOpening,
+    captionOpening,
+    openingDuration,
+    linksAnimation,
+};

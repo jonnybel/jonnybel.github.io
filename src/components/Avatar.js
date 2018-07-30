@@ -1,48 +1,75 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { cx, css } from 'react-emotion';
 import avatarImage from '../media/images/portrait.png';
 
-import { avatarEntrance, avatarOpening, openingDuration } from '../styles/animations';
+import Paint from './Paint';
 
-const Avatar = (props) => {
-    const { color, opened } = props;
+import {
+    avatarOpening,
+    avatarEntrance,
+    openingDuration,
+} from '../styles/animations';
 
-    const entranceAnimation = css`
-        animation: ${avatarEntrance} 600ms;
-    `;
+class Avatar extends Component {
+    static propTypes = {
+        phase: PropTypes.string.isRequired,
+        onOpen: PropTypes.func.isRequired,
+    };
 
-    const openingAnimation = css`
-        animation: ${avatarOpening} ${openingDuration}ms forwards;
-    `;
+    state = {
+        hasLoaded: false,
+    };
 
-    return (
-        <span
-            className={ cx(
-                css`
-                    z-index: 2;
-                    will-change: transform;
+    render() {
+        const { phase } = this.props;
+        const { hasLoaded } = this.state;
 
-                    width: 200px;
-                    height: 200px;
-                    padding: 0;
-                    border: none;
-                    border-radius: 100%;
-                    pointer-events: none;
+        const entranceAnimation = css`
+            animation: ${avatarEntrance} 600ms;
+        `;
 
-                    background-color: ${color};
-                    background-image: url(${avatarImage});
-                    background-size: cover;
-                `,
-                !opened && entranceAnimation,
-                opened && openingAnimation
-            ) } />
-    );
-};
+        const openingAnimation = css`
+            animation: ${avatarOpening} ${openingDuration}ms forwards;
+        `;
 
-Avatar.propTypes = {
-    color: PropTypes.string,
-    opened: PropTypes.bool,
-};
+        const base = css`
+            z-index: 2;
+            will-change: transform;
+
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            pointer-events: none;
+        `;
+
+        const loading = css`
+            transform: scale(0.1);
+            opacity: 0;
+            visibility: none;
+        `;
+
+        return (
+            <Fragment>
+                <img
+                    alt="avatar"
+                    src={ avatarImage }
+                    role="button"
+                    onLoad={ () => this.setState({ hasLoaded: true }) }
+                    className={ cx(
+                        base,
+                        !hasLoaded && loading,
+                        hasLoaded && phase === 'entry' && entranceAnimation,
+                        phase !== 'entry' && openingAnimation
+                    ) } />
+                { phase !== 'finish' && <Paint onClick={ this.handleOnClick } hasLoaded={ hasLoaded } phase={ phase } autoFocus />}
+            </Fragment>
+        );
+    }
+
+    handleOnClick = () => {
+        this.state.hasLoaded && this.props.onOpen();
+    }
+}
 
 export default Avatar;

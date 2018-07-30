@@ -4,7 +4,6 @@ import styled, { injectGlobal } from 'react-emotion';
 import Avatar from './components/Avatar';
 import Caption from './components/Caption';
 import Link from './components/Link';
-import Paint from './components/Paint';
 
 import { paintDuration } from './styles/animations';
 import colors from './styles/colors';
@@ -12,7 +11,7 @@ import colors from './styles/colors';
 const socialLinks = [
     { href: 'https://github.com/jonnybel', name: 'github', color: '#000' },
     { href: 'https://linkedin.com/in/jonnybel', name: 'linkedin', color: '#0073b1' },
-    { href: 'https://letterboxd.com/jonnybel/', name: 'letterboxd', color: '#66cc33' },
+    { href: 'https://letterboxd.com/jonnybel', name: 'letterboxd', color: '#66cc33' },
     { href: 'https://instagram.com/jonnybel', name: 'instagram', color: '#8a3ab9' },
     { href: 'https://open.spotify.com/user/1166854904', name: 'spotify', color: '#1db954' },
 ];
@@ -25,6 +24,10 @@ const Container = styled('main')`
 `;
 
 const LinksContainer = styled('div')`
+    display: flex;
+    width: 90%;
+    max-width: 380px;
+    justify-content: space-around;
     position: absolute;
     transform: translateY(180px);
 `;
@@ -47,8 +50,8 @@ class App extends Component {
 
         return (
             <Container>
-                <Avatar opened={ phase !== 'entry' } color={ colors.riverbed } />
-                {phase !== 'finish' && <Paint phase={ phase } onClick={ () => this.turnOn() } autoFocus />}
+                <Avatar phase={ phase } onOpen={ () => this.turnOn() } />
+
                 {phase !== 'entry' && <Caption phase={ phase } />}
                 {phase !== 'entry' && (
                     <LinksContainer>
@@ -60,7 +63,7 @@ class App extends Component {
     }
 
     turnOn() {
-        if (!this.state.opened) {
+        if (this.state.phase === 'entry') {
             this.setState({ phase: 'opening' });
             injectGlobal`
                 body {

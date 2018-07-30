@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cx, css } from 'react-emotion';
+import styled, { cx, css } from 'react-emotion';
 import { paintDuration, linksAnimation } from '../styles/animations';
 
 import colors from '../styles/colors';
@@ -19,39 +19,31 @@ const Link = (props) => {
         }
     `;
 
-    const iconClass = cx(
-        css`
-            display: inline-block;
-            border-radius: 100%;
-            margin: 20px;
+    const IconLink = styled('a')`
+        display: inline-block;
+        border-radius: 100%;
 
-            @media (max-width: 400px) {
-                margin: 10px;
+        > svg {
+            fill: ${colors.submarine};
+
+            will-change: transform;
+            transition-property: transform, fill;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+            transform: scale(0.9);
+
+            :hover,
+            :focus {
+                transform: scale(1);
+                fill: ${color};
             }
-
-            > svg {
-                fill: ${colors.submarine};
-
-                will-change: transform;
-                transition-property: transform, fill;
-                transition-duration: 0.3s;
-                transition-timing-function: ease;
-                transform: scale(0.9);
-
-                :hover,
-                :focus {
-                    transform: scale(1);
-                    fill: ${color};
-                }
-            }
-        `,
-        phase === 'opening' && entranceAnimation
-    );
+        }
+    `;
 
     return (
-        <a href={ href } target="_blank" className={ iconClass }>
+        <IconLink href={ href } target="_blank" className={ cx(phase === 'opening' && entranceAnimation) }>
             <SvgIcon size={ '40px' } name={ name } />
-        </a>
+        </IconLink>
     );
 };
 

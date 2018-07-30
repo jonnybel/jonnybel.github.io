@@ -1,6 +1,21 @@
 import styled from 'react-emotion';
 import colors from '../styles/colors';
-import { paintEntrance, paintAnimation, paintDuration } from '../styles/animations';
+import {
+    loadingLoop,
+    paintDuration,
+    paintEntrance,
+    paintAnimation,
+} from '../styles/animations';
+
+const getAnimation = (hasLoaded, phase) => {
+    if (!hasLoaded) {
+        return `${loadingLoop} 0.5s infinite both alternate;`;
+    } else if (phase === 'entry') {
+        return `${paintEntrance} 500ms;`;
+    } else if (phase === 'opening') {
+        return `${paintAnimation} ${paintDuration}ms forwards;`;
+    }
+};
 
 const Paint = styled('button')`
     position: absolute;
@@ -27,13 +42,7 @@ const Paint = styled('button')`
         transform: scale(0.11);
     }
 
-    animation: ${(props) => {
-        if (props.phase === 'entry') {
-            return `${paintEntrance} 500ms;`;
-        } else if (props.phase === 'opening') {
-            return `${paintAnimation} ${paintDuration}ms forwards;`;
-        }
-    }};
+    animation: ${(props) => getAnimation(props.hasLoaded, props.phase)};
 `;
 
 export default Paint;
