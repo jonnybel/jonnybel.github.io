@@ -47,10 +47,10 @@ const paintEntrance = keyframes`
 
 const linksAnimation = keyframes`
     from, to {
-        transform: scale(0.9);
+        transform: scale(0.95);
     }
     ${stepCues[2]}% {
-        transform: scale(1.2);
+        transform: scale(1.3);
     }
 `;
 

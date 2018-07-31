@@ -23,6 +23,9 @@ const Link = (props) => {
         display: inline-block;
         border-radius: 100%;
 
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+
         > svg {
             fill: ${colors.submarine};
 
@@ -30,7 +33,7 @@ const Link = (props) => {
             transition-property: transform, fill;
             transition-duration: 0.3s;
             transition-timing-function: ease;
-            transform: scale(0.9);
+            transform: scale(0.95);
 
             :hover,
             :focus {
@@ -42,7 +45,7 @@ const Link = (props) => {
 
     return (
         <IconLink href={ href } target="_blank" className={ cx(phase === 'opening' && entranceAnimation) }>
-            <SvgIcon size={ '40px' } name={ name } />
+            <SvgIcon size={ '35px' } name={ name } />
         </IconLink>
     );
 };

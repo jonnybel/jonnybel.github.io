@@ -23,8 +23,11 @@ const Paint = styled('button')`
     height: 2050px;
     border: none;
     border-radius: 100%;
-    outline: none;
     cursor: pointer;
+
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    ::-moz-focus-inner {border:0;}
 
     background-color: ${colors.riverbed};
 
