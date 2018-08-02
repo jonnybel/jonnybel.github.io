@@ -30,6 +30,10 @@ injectGlobal`
             background: ${colors.riverbed};
         }
 
+        & > div {
+            flex: 1 1 auto;
+        }
+
         font-family: 'Abel', sans-serif;
     }
     h1 {

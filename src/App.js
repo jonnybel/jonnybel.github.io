@@ -17,8 +17,9 @@ const socialLinks = [
 ];
 
 const Container = styled('main')`
-    max-width: 500px;
+    position: relative;
     display: flex;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
 `;
