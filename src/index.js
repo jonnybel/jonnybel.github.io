@@ -14,7 +14,7 @@ injectGlobal`
 
     body,
     html {
-        background-color: ${colors.submarine};
+        background-color: ${colors.foreground};
     }
 
     body {
@@ -27,26 +27,23 @@ injectGlobal`
         align-items: center;
 
         *::selection {
-            background: ${colors.riverbed};
+            background: ${colors.background};
         }
 
         & > div {
             flex: 1 1 auto;
         }
 
+        color: ${colors.foreground};
         font-family: 'Abel', sans-serif;
+        font-size: 22px;
     }
     h1 {
-        color: ${colors.submarine};
+        color: ${colors.foreground};
         margin: 1em;
         font-size: 35px;
         font-weight: bold;
         letter-spacing: 2px;
-    }
-
-    p {
-        color: ${colors.submarine};
-        font-size: 22px;
     }
 `;
 

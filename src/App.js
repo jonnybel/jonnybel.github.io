@@ -73,7 +73,7 @@ class App extends Component {
                 injectGlobal`
                   body,
                   html {
-                      background-color: ${colors.riverbed};
+                      background-color: ${colors.background};
                   }
                   body {
                       overflow: initial;

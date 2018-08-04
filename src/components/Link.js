@@ -27,17 +27,17 @@ const Link = (props) => {
         -webkit-tap-highlight-color: transparent;
 
         > svg {
-            fill: ${colors.submarine};
+            fill: ${colors.foreground};
 
             will-change: transform;
             transition-property: transform, fill;
             transition-duration: 0.3s;
             transition-timing-function: ease;
-            transform: scale(0.95);
+            transform: scale3d(0.95,0.95,1);
 
             :hover,
             :focus {
-                transform: scale(1);
+                transform: scale3d(1,1,1);
                 fill: ${color};
             }
         }

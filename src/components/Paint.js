@@ -29,7 +29,7 @@ const Paint = styled('button')`
     -webkit-tap-highlight-color: transparent;
     ::-moz-focus-inner {border:0;}
 
-    background-color: ${colors.riverbed};
+    background-color: ${colors.background};
 
     will-change: transform;
     transition-property: transform;

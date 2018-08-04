@@ -47,25 +47,25 @@ const paintEntrance = keyframes`
 
 const linksAnimation = keyframes`
     from, to {
-        transform: scale(0.95);
+        transform: scale3d(0.95,0.95,1);
     }
     ${stepCues[2]}% {
-        transform: scale(1.3);
+        transform: scale3d(1.3,1.3,1);
     }
 `;
 
 const avatarOpening = keyframes`
     from, ${stepCues[1]}% {
         transform: scale(1);
-        background-color: ${colors.riverbed};
+        background-color: ${colors.background};
     }
     ${stepCues[2]}%, ${stepCues[3]}% {
         transform: scale(0.5);
-        background-color: ${colors.submarine};
+        background-color: ${colors.foreground};
     }
     to {
         transform: scale(0.5) translateY(-270px);
-        background-color: ${colors.submarine};
+        background-color: ${colors.foreground};
     }
 `;
 

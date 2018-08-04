@@ -41,6 +41,7 @@ class Avatar extends Component {
             height: 200px;
             border-radius: 100%;
             pointer-events: none;
+            user-select: none;
         `;
 
         const loading = css`
