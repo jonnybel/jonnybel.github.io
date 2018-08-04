@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import styled, { injectGlobal } from 'react-emotion';
 
-import Avatar from './components/Avatar';
-import Caption from './components/Caption';
-import Link from './components/Link';
+import { Avatar, Caption, Link } from './components';
 
 import { paintDuration } from './styles/animations';
 import colors from './styles/colors';
@@ -52,7 +50,6 @@ class App extends Component {
         return (
             <Container>
                 <Avatar phase={ phase } onOpen={ () => this.turnOn() } />
-
                 {phase !== 'entry' && <Caption phase={ phase } />}
                 {phase !== 'entry' && (
                     <LinksContainer>
