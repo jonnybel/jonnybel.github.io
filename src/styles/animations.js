@@ -20,7 +20,7 @@ const paintAnimation = keyframes`
         transform: scale(0.11);
     }
     ${stepCues[2]}% {
-        transform: scale(0.3);
+        transform: scale(0.28);
     }
     to {
         transform: scale(2);

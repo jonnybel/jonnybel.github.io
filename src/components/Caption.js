@@ -9,6 +9,7 @@ const Caption = () => (
     <div
         className={ css`
             position: absolute;
+            padding: 0 25px;
             text-align: center;
             cursor: default;
 
