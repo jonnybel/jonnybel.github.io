@@ -19,11 +19,12 @@ const Caption = () => (
         <h1>Abel Almeida</h1>
         <Textmoji emoji="👨‍💻" >{'Software Engineer, Web Developer'}</Textmoji >
         <p>
-            <Textmoji emoji="🎬" >{'Cinema, '}</Textmoji >
-            <Textmoji emoji="📷" >{'Photography '}</Textmoji >
-            {'& '}
-            <Textmoji emoji="🎵" >{'Music '}</Textmoji >
-            {'Enthusiast.'}
+            <Textmoji emoji="🎬" >{'Cinema'}</Textmoji >
+            {', '}
+            <Textmoji emoji="📷" >{'Photography'}</Textmoji >
+            {' & '}
+            <Textmoji emoji="🎵" >{'Music'}</Textmoji >
+            {' Enthusiast.'}
         </p>
     </div>
 );
