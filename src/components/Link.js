@@ -7,6 +7,9 @@ import colors from '../styles/colors';
 
 import SvgIcon from './SvgIcon';
 
+const ICON_SIZE = '45px';
+const SVG_SIZE = '33px';
+
 const Link = (props) => {
     const {
         link: { name, href, color },
@@ -20,32 +23,40 @@ const Link = (props) => {
     `;
 
     const IconLink = styled('a')`
-        display: inline-block;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 100%;
+        height: ${ICON_SIZE};
+        width: ${ICON_SIZE};
 
         outline: none;
         -webkit-tap-highlight-color: transparent;
 
-        > svg {
-            fill: ${colors.foreground};
-
-            will-change: transform;
-            transition-property: transform, fill;
-            transition-duration: 0.3s;
-            transition-timing-function: ease;
-            transform: scale3d(0.95,0.95,1);
-
-            :hover,
-            :focus {
-                transform: scale3d(1,1,1);
+        :hover,
+        :focus {
+            > svg {
                 fill: ${color};
             }
+        }
+
+        :focus {
+            transition: box-shadow ease 0.3s;
+            box-shadow: 0 0 1px 1px ${colors.foreground};
+        }
+
+        > svg {
+            fill: ${colors.foreground};
+            height: ${SVG_SIZE};
+            width: ${SVG_SIZE};
+
+            transition: fill ease 0.3s;
         }
     `;
 
     return (
         <IconLink href={ href } target="_blank" className={ cx(phase === 'opening' && entranceAnimation) }>
-            <SvgIcon size={ '35px' } name={ name } />
+            <SvgIcon name={ name } />
         </IconLink>
     );
 };

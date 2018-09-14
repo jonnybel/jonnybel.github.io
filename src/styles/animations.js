@@ -47,7 +47,7 @@ const paintEntrance = keyframes`
 
 const linksAnimation = keyframes`
     from, to {
-        transform: scale3d(0.95,0.95,1);
+        transform: scale3d(1,1,1);
     }
     ${stepCues[2]}% {
         transform: scale3d(1.3,1.3,1);
