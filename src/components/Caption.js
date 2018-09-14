@@ -17,7 +17,7 @@ const Caption = () => (
             animation: ${captionOpening} ${openingDuration}ms forwards;
         ` }>
         <h1>Abel Almeida</h1>
-        <Textmoji emoji="👨‍💻" >{'Software Engineer, Web Developer'}</Textmoji >
+        <Textmoji emoji="👨‍💻" >{'Software Engineer'}</Textmoji >
         <p>
             <Textmoji emoji="🎬" >{'Cinema'}</Textmoji >
             {', '}

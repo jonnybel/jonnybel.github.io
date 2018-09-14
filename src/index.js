@@ -35,15 +35,24 @@ injectGlobal`
         }
 
         color: ${colors.foreground};
-        font-family: 'Abel', sans-serif;
+        font-family: 'Rubik', sans-serif;
         font-size: 22px;
+        font-weight: 300;
+
+        @media (max-width: 480px) {
+            font-size: 18px;
+        }
     }
     h1 {
         color: ${colors.foreground};
         margin: 1em;
-        font-size: 35px;
-        font-weight: bold;
-        letter-spacing: 2px;
+        font-size: 32px;
+        font-weight: 500;
+        letter-spacing: 1px;
+
+        @media (max-width: 480px) {
+            font-size: 27px;
+        }
     }
 `;
 
