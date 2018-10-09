@@ -9,6 +9,7 @@ import colors from './styles/colors';
 const socialLinks = [
     { href: 'https://github.com/jonnybel', name: 'github', color: '#000' },
     { href: 'https://linkedin.com/in/jonnybel', name: 'linkedin', color: '#0073b1' },
+    { href: 'https://twitter.com/JonnyBel12', name: 'twitter', color: '#1da1f2' },
     { href: 'https://letterboxd.com/jonnybel', name: 'letterboxd', color: '#66cc33' },
     { href: 'https://instagram.com/jonnybel', name: 'instagram', color: '#8a3ab9' },
     { href: 'https://open.spotify.com/user/1166854904', name: 'spotify', color: '#1db954' },
