@@ -31,7 +31,7 @@ injectGlobal`
         }
 
         & > div {
-            flex: 1 1 auto;
+            flex: 1 1 100%;
         }
 
         color: ${colors.foreground};
